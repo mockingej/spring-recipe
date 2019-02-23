@@ -1,6 +1,8 @@
 package eg.springframework.springrecipe.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -16,7 +18,9 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
-//    private String description;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @Lob
     private Byte[] image;
