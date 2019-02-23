@@ -1,2 +1,2 @@
-# spring-recipe
+# Spring-Recipe
 Spring Framework Recipe
